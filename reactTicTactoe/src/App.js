@@ -16,11 +16,23 @@ class App extends Component {
   }
 
 
+  handleClick(index){
+    if(this.state.board[index] ===""){
+
+    }
+    this.state.board[index] = this.state.currentTurn
+    this.setState({
+      board: this.state.board,
+      currentTurn: this.state.currentTurn === this.state.PLAYER_ONE_SYMBOL ? this.state.PLAYER_TWO_SYMBOL: this.state.PLAYER_ONE_SYMBOL
+    })
+    console.log(index);
+  }
+
   render() {
     return (
       <div className="board">
-        {this.state.board.map((cell) => {
-          return <div className="square">{cell}</div>;
+        {this.state.board.map((cell, index) => {
+          return <div onClick={() => this.handleClick(index)} data-cell-id={index} className="square">{cell}</div>;
         })}
       </div>
     );
