@@ -1,1 +1,1 @@
-reactTicTacToe
+A simple tic tac toe game, that i coded up for practice. 
