@@ -1,0 +1,32 @@
+import React, { Component } from 'react';
+import './App.css';
+
+class App extends Component {
+
+  constructor(props){
+    super(props)
+    this.state = {
+      PLAYER_ONE_SYMBOL: "x",
+      PLAYER_TWO_SYMBOL: "O",
+      currentTurn: "X",
+      board: [
+        "", "", "", "", "", "", "", "", ""
+      ]
+    }
+  }
+
+
+  render() {
+    return (
+      <div className="board">
+        {this.state.board.map((cell) => {
+          return <div className="square">{cell}</div>;
+        })}
+      </div>
+    );
+  }
+}
+
+export default App;
+
+
